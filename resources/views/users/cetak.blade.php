@@ -124,7 +124,7 @@
                    <h6> Pertanyaan konsultasi</h6>
                  
                     <p> 
-                        {{$k['pertanyaan']}}
+                        {!!$k['pertanyaan']!!}
                     </p>
                     </td>
                     
