@@ -51,29 +51,52 @@ use App\Models\User;
                 </div>
             </div>
 
-                <div class="row">
-                    <div class="col">
-                        <h5  class="m-0 font-weight-bold text-primary">{{$tema}}</h5>
-                    </div>
-                    <div class="col">
-                        <div align="right">
-
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tanggapi">
-                                Tanggapi
-                            </button>
+            <?php
+            $id      = $item->id;
+             $tema  = $item->tema;
+             $created = $item->created_at;
+             $pertanyaan = $item->pertanyaan;
+             ?>
+         <h5><a href="/konsultasi/{{$id}}">{{$tema}}</a></h5>
+         <div class="row">
+             <div class="col-6">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td scope="row" style="width : 100px">Waktu </td>
+                            <td> : {{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</td>
+                          
+                            
+                        </tr>
+                        <tr>
+                            <td scope="row">Pertanyaan</td>
+                            <td>  :  <div class="m-0 ml-3" >
+                                     <div class="m-2">
+                                         {!!$pertanyaan!!}    
+                                         
+                                     </div>
+                                 
+                                </div>
+                             </td>
                            
-                        </div>
-                        
-                    </div>
-                </div>
-                
+                           
+                        </tr>
+                    </tbody>
+                </table>    
+             </div>
+             <div class="col mr-5" align="right" >
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tanggapi">
+                    Tanggapi
+                </button>
+             </div>
+         </div>
+           
+           
+                 <hr>
+
+
                    
-                    <small>{{$created}}</small>
-                    <p class="m-0 font-weight-bold text-primary"><small>by : </small> {{ User::find($idUser)->name }}</p>
-                    <p>{!!$pertanyaan!!}</p>
-                    <hr>
-                 
+                    
              @endforeach
            
         </div>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SIKOPERAJA - Login</title>
+    <title>Klinik Pengadaan - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -29,14 +29,12 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-7 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"  style="background-color: azure"></div>
-                            <div class="col-lg-6">
+                      
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login User</h1>
@@ -89,10 +87,9 @@
                                         <a class="small" href="/password/reset">Lupa Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="/register">Belum punya akun? Daftarkan sekarang!</a>
+                                        <a class="small" href="/daftar">Belum punya akun? Daftarkan sekarang!</a>
                                     </div>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

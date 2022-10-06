@@ -68,13 +68,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ajukan Tatap Muka</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
         <form action="/konsultasi/tatapmuka" method="post">
+            <strong>Anda akan mengajukan tatap muka ke pihak yang memberikan konsultasi! </strong> Silahkan pilih tanggal rencana konsultasi di kolom bawah ini.
+            <br>
             @csrf
                 <label for="">Pilih tanggal tatap muka :</label>
             <input type="date" name="jadwal" id="jadwal" 
@@ -107,6 +109,11 @@
 
 
 <div class="container-fluid">
+    @if (session('success'))
+    <div class="alert alert-success" role="alert">
+        {{session('success')}}
+    </div>
+@endif
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Konsultasi Anda</h6>
@@ -118,7 +125,7 @@
                     <tbody>
                         <tr>
                             <td scope="row" style="width : 300px;">Tanggal </td>
-                            <td>: {{Carbon\Carbon::parse($konsultasi->created)->format('l, d-m-Y h:i')}}</td>
+                            <td>: {{Carbon\Carbon::parse($konsultasi->created)->translatedFormat('l, d-m-Y h:i')}}</td>
                         </tr>
                         <tr>
                             <td scope="row">Tema</td>
@@ -271,7 +278,7 @@
                     </div>   
                     </div>
                     <div class="card-body">
-                        {{$TM[0]->hasil}}
+                        {!!$TM[0]->hasil!!}
                     </div>
                 </div>
                 @endif  
@@ -324,7 +331,7 @@
                                                             </td>
                                                             <td>
                                                                 <div align="right">
-                                                                    <small  class=" text-muted">{{Carbon\Carbon::parse($created)->format('l, d-m-Y h:i')}}</small>
+                                                                    <small  class=" text-muted">{{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</small>
                                                                 </div>
                                                             </td>
                                                         </tr>

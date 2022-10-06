@@ -55,7 +55,7 @@
                           
                           ?>
                        
-                           <td>{{Carbon\Carbon::parse($time)->format('l, d-m-Y')}} </td>
+                           <td>{{Carbon\Carbon::parse($time)->translatedFormat('l, d-m-Y')}} </td>
                            <td> 
                                <?php 
                                 if($status === "Menunggu Konfirmasi"){

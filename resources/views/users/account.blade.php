@@ -6,6 +6,7 @@
             {{session('success')}}
         </div>
     @endif
+    
        <!-- Basic Card Example -->
        <div class="card shadow mb-4 m-4">
         <div class="card-header py-3">
@@ -16,30 +17,45 @@
                 <tbody>
                     <tr>
                         <td scope="row">Nama</td>
-                        <td style="min-width: 300px">: {{ Auth::guard('')->user()->name}}</td>
+                        <td style="min-width: 300px">: {{ $Data->name}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">NIP</td>
-                        <td style="min-width: 300px">: {{ Auth::guard('')->user()->nip}}</td>
+                        <td style="min-width: 300px">: {{ $Data->nip}}</td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">Unit Kerja</td>
+                        <td style="min-width: 300px">: {{ $unit->name}}</td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">Jabatan</td>
+                        <td style="min-width: 300px">: {{ $Data->jabatan}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">E-mail</td>
-                        <td>: {{ Auth::guard('')->user()->email}}</td>
+                        <td>: {{ $Data->email}}</td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">No Telpon</td>
+                        <td>: {{ $Data->phone}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">Tanggal Buat</td>
-                        <td>: {{ Carbon\Carbon::parse(Auth::guard('')->user()->created_at)
-                        ->format('l, d-m-Y H:i:s')}}</td>
+                        <td>: {{ Carbon\Carbon::parse($Data->created_at)
+                        ->translatedFormat('l, d-m-Y H:i:s')}}</td>
                    
                     </tr>
 
                     <tr>
                         <td scope="row">Terakhir Update</td>
-                        <td>: {{ Carbon\Carbon::parse(Auth::guard('')->user()->updated_at)
-                        ->format('l, d-m-Y H:i:s')}}</td>
+                        <td>: {{ Carbon\Carbon::parse($Data->updated_at)
+                        ->translatedFormat('l, d-m-Y H:i:s')}}</td>
                    
                     </tr>
                 </tbody>

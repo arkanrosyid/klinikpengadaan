@@ -68,7 +68,7 @@
             <tbody>
                 <tr>
                     <td >Tanggal Konsultasi</td>
-                    <td style="min-width: 250px">{{ Carbon\Carbon::parse($tM['tanggal'])->format('l, d-m-Y')}}</td>
+                    <td style="min-width: 250px">{{ Carbon\Carbon::parse($tM['tanggal'])->translatedFormat('l, d-M-Y')}}</td>
                 </tr>
                
                 <tr>
@@ -104,7 +104,7 @@
                 </tr>
                 <tr>
                     <td>Jabatan</td>
-                    <td></td>
+                    <td>{{$e->jabatan}}</td>
                 </tr>
                 <tr>
                     <td>Unit Kerja</td>

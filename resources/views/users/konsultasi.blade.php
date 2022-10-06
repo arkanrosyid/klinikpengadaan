@@ -20,7 +20,7 @@
                        <tbody>
                            <tr>
                                <td scope="row" style="width : 100px">Waktu </td>
-                               <td> : {{Carbon\Carbon::parse($created)->format('l, d-m-Y h:i')}}</td>
+                               <td> : {{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</td>
                                
                            </tr>
                            <tr>
@@ -66,7 +66,7 @@
                         <tbody>
                             <tr>
                                 <td scope="row" style="width : 100px">Waktu </td>
-                                <td> : {{Carbon\Carbon::parse($created)->format('l, d-m-Y h:i')}}</td>
+                                <td> : {{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</td>
                                 
                             </tr>
                             <tr>
@@ -82,7 +82,7 @@
                             </tr>
                         </tbody>
                     </table>
-                     
+                     <hr>
                  @endforeach
                
             </div>

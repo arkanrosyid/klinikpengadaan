@@ -59,7 +59,7 @@
                           $status = $i->status;
                           ?>
                        
-                           <td>{{Carbon\Carbon::parse($time)->format('l, d-m-Y')}} </td>
+                           <td>{{Carbon\Carbon::parse($time)->translatedFormat('l, d-m-Y')}} </td>
                            <td> 
                                {{$status}}
                            </td>
@@ -75,13 +75,13 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Ajukan Ulang</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        Anda akan meminta pengguna mengajukan ulang jadwal tatap muka
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -95,13 +95,13 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Setujui</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        Anda akan menyetujui jadwal tatap muka pada  {{Carbon\Carbon::parse($time)->translatedFormat('l, d-M-Y')}}
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -127,7 +127,7 @@
                                               </button>
                                           </div>
                                           <div class="modal-body">
-                                            Anda akan meminta pengguna untuk melakukan pengajuan ulang jadwal tatap muka
+                                            Anda akan meminta pengguna untuk melakukan pengajuan ulang jadwal tatap muka 
                                           </div>
                                           <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -147,7 +147,7 @@
                                               </button>
                                           </div>
                                           <div class="modal-body">
-                                            Anda akan menyetujui jadwal tatap muka
+                                            Anda akan menyetujui jadwal tatap muka pada {{Carbon\Carbon::parse($time)->translatedFormat('l, d-M-Y')}}
                                           </div>
                                           <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -199,7 +199,7 @@
                                                 <input type="hidden" name="id" value="{{$id}}">
                                                 <div class="form-group">
                                                   
-                                                  <textarea class="form-control" name="hasil" id="jawab" rows="5" required></textarea>
+                                                  <textarea class="form-control" name="hasil" id="jawab" rows="5"></textarea>
                                                 </div>
                                             
 

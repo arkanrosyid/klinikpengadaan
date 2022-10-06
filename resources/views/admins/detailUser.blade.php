@@ -27,18 +27,33 @@
                            
                         </tr>
                         <tr>
+                            <td scope="row">Unit Kerja</td>
+                            <td>: {{$User->unit_kerja}}</td>
+                           
+                        </tr>
+                        <tr>
+                            <td scope="row">Jabatan</td>
+                            <td>: {{$User->jabatan}}</td>
+                           
+                        </tr>
+                        <tr>
                             <td scope="row">E-mail</td>
                             <td>: {{$User->email}}</td>
                            
                         </tr>
                         <tr>
+                            <td scope="row">No Telpon</td>
+                            <td>: {{ $User->phone}}</td>
+                       
+                        </tr>
+                        <tr>
                             <td scope="row">Pengguna Sejak</td>
-                            <td>: {{ Carbon\Carbon::parse($User->created_at)->format('l, d-m-Y H:i:s')}}</td>
+                            <td>: {{ Carbon\Carbon::parse($User->created_at)->translatedFormat('l, d-m-Y h:i')}}</td>
                            
                         </tr>
                         <tr>
                             <td scope="row">Perubahan Terakhir</td>
-                            <td>: {{ Carbon\Carbon::parse($User->updated_at)->format('l, d-m-Y H:i:s')}}</td>
+                            <td>: {{ Carbon\Carbon::parse($User->updated_at)->translatedFormat('l, d-m-Y h:i')}}</td>
                            
                         </tr>
                         <tr>
@@ -79,18 +94,33 @@
                            
                         </tr>
                         <tr>
+                            <td scope="row">Unit Kerja</td>
+                            <td>: {{$unit->name}}</td>
+                           
+                        </tr>
+                        <tr>
+                            <td scope="row">Jabatan</td>
+                            <td>: {{$User->jabatan}}</td>
+                           
+                        </tr>
+                        <tr>
                             <td scope="row">E-mail</td>
                             <td>: {{$User->email}}</td>
                            
                         </tr>
                         <tr>
+                            <td scope="row">No Telpon</td>
+                            <td>: {{ $User->phone}}</td>
+                       
+                        </tr>
+                        <tr>
                             <td scope="row">Pengguna Sejak</td>
-                            <td>: {{ Carbon\Carbon::parse($User->created_at)->format('l, d-m-Y H:i:s')}}</td>
+                            <td>: {{ Carbon\Carbon::parse($User->created_at)->translatedFormat('l, d-m-Y h:i')}}</td>
                            
                         </tr>
                         <tr>
                             <td scope="row">Perubahan Terakhir</td>
-                            <td>: {{ Carbon\Carbon::parse($User->updated_at)->format('l, d-m-Y H:i:s')}}</td>
+                            <td>: {{ Carbon\Carbon::parse($User->updated_at)->translatedFormat('l, d-m-Y h:i')}}</td>
                            
                         </tr>
                       

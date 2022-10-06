@@ -12,6 +12,9 @@
             <h6 class="m-0 font-weight-bold text-primary">Profil User</h6>
         </div>
         <div class="card-body">
+            @if (!$Data->jabatan || !$Data->nip || !$Data->id_unit || !$Data->name || !$Data->phone || !$Data->email)
+                <h6 class="m-0 font-weight-bold text-danger" align="center">Mohon melengkapi data yang masih kosong untuk melanjutkan</h6>
+            @endif
             <table class="table">
                 <tbody>
                     <form action="" method="post">
@@ -30,17 +33,49 @@
                     <tr>
                         <td scope="row">NIP</td>
                         <td style="min-width: 300px">
-                              <input type="text" class="form-control @error('nama') is-invalid @enderror" 
+                              <input type="text" class="form-control @error('nip') is-invalid @enderror" 
                               name="nip" id="nip" aria-describedby="helpId" 
                               value="{{$Data->nip}}" placeholder=""required>  
                         </td>
-                   
+                    </tr>
+                    <tr>
+                        <td scope="row">Unit Kerja</td>
+                        <td style="min-width: 300px">
+                          
+                              <select class="form-control" name="unit" id="unit">
+                                @foreach ($units as $unit)
+                                    @if ($unit->id == $Data->id_unit)
+                                          <option value="{{$unit->id}}" selected>{{ $unit->name}}</option>
+                                    @else
+                                        <option value="{{$unit->id}}">{{$unit->name}}</option>
+                                    @endif
+                                @endforeach
+                              
+                            
+                         
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Jabatan</td>
+                        <td style="min-width: 300px">
+                              <input type="text" class="form-control @error('jabatan') is-invalid @enderror" 
+                              name="jabatan" id="jabatan" aria-describedby="helpId" 
+                              value="{{$Data->jabatan}}" placeholder=""required>  
+                        </td>
                     </tr>
                     <tr>
                         <td scope="row">E-mail</td>
                         <td><input type="email" class="form-control @error('email') is-invalid @enderror" 
                             name="email" id="email" aria-describedby="helpId" 
                             value="{{$Data->email}}" placeholder="" required>  
+                        </td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">No Telephone</td>
+                        <td><input type="text" class="form-control @error('phone') is-invalid @enderror" 
+                            name="phone" id="phone" aria-describedby="helpId" 
+                            value="{{$Data->phone}}" placeholder="" required>  
                         </td>
                    
                     </tr>

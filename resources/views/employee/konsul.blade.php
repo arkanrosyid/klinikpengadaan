@@ -27,18 +27,77 @@
         <div class="card-body">
         
                     {{-- {{$user['name']}} --}}
-
-                    <h5 style=" margin: 0">{{$konsultasi['tema']}}</h5>
-                    <small>{{$konsultasi['created_at']}}</small>
-                    <h6>
-                    <small>by : </small>{{$user['name']}}
-                    </h6>
-
-                    <br>
-                    
-                    <p>{!!$konsultasi['pertanyaan']!!}</p>
-                   
-                    <br>
+                    <table class="table table-borderless">
+                  
+                        <tbody>
+                            <tr>
+                                <td scope="row" style="width : 300px;">Tanggal </td>
+                                <td>: {{Carbon\Carbon::parse($konsultasi->created)->translatedFormat('l, d-m-Y h:i')}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Tema</td>
+                                <td>: {{$konsultasi->tema}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Pertanyaan</td>
+                                <td>: 
+                                   <div class="ml-3">
+                                    {!! $konsultasi->pertanyaan !!} 
+                                    </div> </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Pihak yang meminta konsultasi :</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Nama</td>
+                                <td>: {{$user->name}} </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Unit Kerja</td>
+                                <td>: {{$konsultasi->unit_kerja}}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Jabatan</td>
+                                <td>: {{$user->jabatan}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Pihak yang memberikan konsultasi :</td>
+                            </tr>
+                            @if (!empty($emp))
+    
+                                <tr>
+                                    <td scope="row">Nama</td>
+                                    <td>: {{$emp->name}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Unit Kerja</td>
+                                    <td>: {{$emp->unit_kerja}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Jabatan</td>
+                                    <td>: {{$emp->jabatan}}</td>
+                                </tr>
+                                
+                            @else
+                                <tr>
+                                    <td scope="row">Nama</td>
+                                    <td>: </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Unit Kerja</td>
+                                    <td>: </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Jabatan</td>
+                                    <td>:</td>
+                                </tr>
+                                
+                            @endif
+                            
+    
+              
+                        </tbody>
+                    </table>
                     <hr>
                     @if ($konsultasi['status'] === 'Selesai' || $konsultasi['status'] ==="Tatap Muka")
 
@@ -115,7 +174,7 @@
                     </div>   
                     </div>
                     <div class="card-body">
-                        {{$TM[0]->hasil}}
+                        {!! $TM[0]->hasil!!}
                     </div>
                 </div>
                 @endif  
@@ -150,13 +209,13 @@
                                                                 <?php 
                                                            
                                                                 $user = User::find($id);  ?>
-                                                                <small>by :</small> <strong> {{$username = $user['name']}}  </strong>
+                                                                <small>Pengguna :</small> <strong> {{$username = $user['name']}}  </strong>
                                                                 @else
 
                                                                 <?php 
                                                            
                                                                 $user = Employee::find($id);  ?>
-                                                                <small>by :</small> <strong>  {{$username = $user['name']}} </strong>
+                                                                <small>Pegawai :</small> <strong>  {{$username = $user['name']}} </strong>
                                                                 @endif
 
                                                              
@@ -167,7 +226,7 @@
                                                             </td>
                                                             <td>
                                                                 <div align="right">
-                                                                    <small  class=" text-muted">{{$created}}</small>
+                                                                    <small  class=" text-muted">{{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</small>
                                                                 </div>
                                                             </td>
                                                         </tr>

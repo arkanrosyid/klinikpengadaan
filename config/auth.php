@@ -47,21 +47,21 @@ return [
             'hash' => false,
         ],
 
-            'user' => [
-                'driver' => 'session',
-                'provider' => 'users',
-            ],
-            
-         'admin' => [
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-        
+
         'employee' => [
             'driver' => 'session',
             'provider' => 'employees',
         ],
- 
+
     ],
 
     /*

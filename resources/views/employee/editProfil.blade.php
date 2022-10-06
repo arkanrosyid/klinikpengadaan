@@ -30,9 +30,27 @@
                     <tr>
                         <td scope="row">NIP</td>
                         <td style="min-width: 300px">
-                              <input type="text" class="form-control @error('nama') is-invalid @enderror" 
+                              <input type="text" class="form-control @error('nip') is-invalid @enderror" 
                               name="nip" id="nip" aria-describedby="helpId" 
                               value="{{$Data->nip}}" placeholder=""required>  
+                        </td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">Unit Kerja</td>
+                        <td style="min-width: 300px">
+                              <input type="text" class="form-control @error('unit') is-invalid @enderror" 
+                              name="unit" id="disabledTextInput" aria-describedby="helpId" 
+                              value="{{$Data->unit_kerja}}" placeholder="" disabled>  
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td scope="row">Jabatan</td>
+                        <td style="min-width: 300px">
+                              <input type="text" class="form-control @error('jabatan') is-invalid @enderror" 
+                              name="jabatan" id="jabatan" aria-describedby="helpId" 
+                              value="{{$Data->jabatan}}" placeholder=""required>  
                         </td>
                    
                     </tr>
@@ -41,6 +59,12 @@
                         <td><input type="email" class="form-control @error('email') is-invalid @enderror" 
                             name="email" id="email" aria-describedby="helpId" 
                             value="{{$Data->email}}" placeholder="" required>  
+                        </td>
+                    <tr>
+                        <td scope="row">No Telpon</td>
+                        <td><input type="text" class="form-control @error('phone') is-invalid @enderror" 
+                            name="phone" id="phone" aria-describedby="helpId" 
+                            value="{{$Data->phone}}" placeholder="" required>  
                         </td>
                    
                     </tr>

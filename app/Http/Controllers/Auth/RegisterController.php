@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Providers\RouteServiceProvider;
-
-use Illuminate\Support\Facades\Hash;
-
+use App\Models\Unit;
 
 use App\Models\User;
+
+
 use App\Models\Admin;
 use App\Models\Employee;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -57,11 +58,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'nip' => 'required',
+            'nip' => 'required|unique:users,nip',
+            'unit' => 'required',
+            'phone' => 'required|unique:users,phone',
+
         ]);
     }
 
@@ -72,30 +77,38 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
 
-     
-   
 
- 
+    public function showRegistrationForm()
+    {
+        $unit = Unit::all();
+        return view('auth.register', ['unit' => $unit]);
+    }
+
+
 
     /**
      * @param array $data
      *
      * @return mixed
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
-        $this->validator($request->all())->validate();
-        return User::create([
+        $this->validator($data->all())->validate();
+        // dd($data);
+        User::create([
             'name' => $data['name'],
             'nip' => $data['nip'],
             'email' => $data['email'],
-
+            'id_unit' => $data['unit'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
+
+        return redirect(url('login'))->with(['info' => 'Akun sukses dibuat!, anda dapat login sekarang']);
     }
 
 
-       /**
+    /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     // public function showEmployeeRegisterForm()

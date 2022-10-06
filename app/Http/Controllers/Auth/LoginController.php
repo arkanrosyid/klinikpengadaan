@@ -84,4 +84,24 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
+
+     public function showUserLoginForm()
+    {
+        return view('User.auth.login');
+    }
+
+    public function userLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/user');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
 }

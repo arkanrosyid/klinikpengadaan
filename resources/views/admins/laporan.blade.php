@@ -23,26 +23,26 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>User</th>
+                            <th>Tanggal</th>
+                            <th>Pengguna</th>
                             <th>NIP</th>
                             <th>Tema</th>
-                            <th>Employee</th>
+                            <th>Pegawai</th>
                             <th>NIP </th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         
                         
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Date</th>
-                            <th>User</th>
+                            <th>Tanggal</th>
+                            <th>Pengguna</th>
                             <th>NIP</th>
                             <th>Tema</th>
-                            <th>Employee</th>
+                            <th>Pegawai</th>
                             <th>NIP </th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -52,7 +52,7 @@
                                 <?php
                                     $user = User::find($item['id_user']);      
                                 ?>
-                                <th> {{Carbon\Carbon::parse($item['created_at'])->format('l, d-m-Y')}} </th>
+                                <th> {{Carbon\Carbon::parse($item['created_at'])->translatedFormat('l, d-m-Y h:i')}} </th>
                                 <th> {{$user['name']}}</th>
                                 <th> {{$user['nip']}}</th>
                                 <th>{{$item['tema']}}</th>

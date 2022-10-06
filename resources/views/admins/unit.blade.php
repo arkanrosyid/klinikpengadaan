@@ -75,8 +75,8 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Name</th>
-                                <th>Created</th>
+                                <th>Nama Unit</th>
+                                <th>Ditambahkan</th>
                                 <th>Action</th>
                             
                             
@@ -85,9 +85,9 @@
                         <tfoot>
                             <tr>
                                 <th>No</th>            
-                                <th>Name</th>
-                                <th>Created</th>
-                                <th>Action</th>
+                                <th>Nama Unit</th>
+                                <th>Ditambahkan</th>
+                                <th>Aksi</th>
                             
                             
                             </tr>
@@ -100,7 +100,7 @@
                                 <tr>
                                     <td>{{$n++;}}</td>
                                     <td>{{$item['name'];}}</td>
-                                    <td> {{Carbon\Carbon::parse($item['created_at'])->format('l, d-m-Y');}} </td>
+                                    <td> {{Carbon\Carbon::parse($item['created_at'])->translatedFormat('l, d-m-Y h:i');}} </td>
                                     <td> 
                    
 

@@ -69,6 +69,18 @@
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
                 <div class="form-group">
+                  <label for="">Jabatan</label>
+                  <input type="text"
+                    class="form-control" name="jabatan" id="" aria-describedby="helpId" placeholder="">
+                  <small id="helpId" class="form-text text-muted">Help text</small>
+                </div>
+                <div class="form-group">
+                  <label for="">No Telpon</label>
+                  <input type="text"
+                    class="form-control" name="phone" id="" aria-describedby="helpId" placeholder="">
+                  <small id="helpId" class="form-text text-muted">Help text</small>
+                </div>
+                <div class="form-group">
                   <label for="">E-mail</label>
                   <input type="text"
                     class="form-control" name="email" id="" aria-describedby="helpId" placeholder="">
@@ -98,7 +110,7 @@
                             <th>Email</th>
                             <th>Pengguna Sejak</th>
                             <th>Status </th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         
                         
                         </tr>
@@ -112,7 +124,7 @@
                             <th>Email</th>
                             <th>Pengguna Sejak</th>
                             <th>Status </th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         
                         
                         </tr>
@@ -127,7 +139,7 @@
                             <td>{{$employee['name']}}</td>
                             <td>{{$employee['nip']}}</td>
                             <td>{{$employee['email']}}</td>
-                            <td>{{Carbon\Carbon::parse($employee['created_at'])->format('l, d-m-Y')}}</td>
+                            <td>{{Carbon\Carbon::parse($employee['created_at'])->translatedFormat('l, d-m-Y h:i')}}</td>
                             <td>{{$employee['status']}}</td>
                             <td>
                                 <a name="" id="" class="btn btn-info mb-1" href="pegawai/detail/{{$employee['id']}}" role="button">Detail</a>
@@ -179,7 +191,7 @@
                             <th>Email</th>
                             <th>Pengguna Sejak</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         
                         
                         </tr>
@@ -193,7 +205,7 @@
                             <th>Email</th>
                             <th>Pengguna Sejak</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         
                         
                         </tr>
@@ -211,7 +223,7 @@
                             <td>{{$users['name']}}</td>
                             <td>{{$users['nip']}}</td>
                             <td>{{$users['email']}}</td>
-                            <td>{{Carbon\Carbon::parse($users['created_at'])->format('l, d-m-Y')}}</td>
+                            <td>{{Carbon\Carbon::parse($users['created_at'])->translatedFormat('l, d-m-Y h:i')}}</td>
                             <td>Aktif</td>
                             <td>
                                 <a name="" id="" class="btn btn-info " href="users/detail/{{$users['id']}}" role="button">Detail</a>

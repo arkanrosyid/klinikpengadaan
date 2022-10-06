@@ -1,9 +1,9 @@
 @extends('employee')
 @section('employee')
 <div class="container-fluid">
-    @if (session('success'))
+    @if (session('tatapMuka'))
         <div class="alert alert-success" role="alert">
-            {{session('success')}}
+            {{session('tatapMuka')}}
         </div>
     @endif
        <!-- Basic Card Example -->
@@ -16,29 +16,45 @@
                 <tbody>
                     <tr>
                         <td scope="row">Nama</td>
-                        <td style="min-width: 300px">: {{ Auth::guard('employee')->user()->name}}</td>
+                        <td style="min-width: 300px">: {{ $data->name}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">NIP</td>
-                        <td style="min-width: 300px">: {{ Auth::guard('employee')->user()->nip}}</td>
+                        <td style="min-width: 300px">: {{ $data->nip}}</td>
+                   
+                    </tr>
+                    
+                    <tr>
+                        <td scope="row">Unit Kerja</td>
+                        <td>: Pengadaan Barang dan Jasa</td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">Jabatan</td>
+                        <td>: {{ $data->jabatan}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">E-mail</td>
-                        <td>: {{ Auth::guard('employee')->user()->email}}</td>
+                        <td>: {{ $data->email}}</td>
+                   
+                    </tr>
+                    <tr>
+                        <td scope="row">No Telpon</td>
+                        <td>: {{ $data->phone}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">Tanggal Buat</td>
-                        <td>: {{ Carbon\Carbon::parse(Auth::guard('employee')->user()->created_at)
+                        <td>: {{ Carbon\Carbon::parse($data->created_at)
                         ->format('l, d-m-Y H:i:s')}}</td>
                    
                     </tr>
 
                     <tr>
                         <td scope="row">Terakhir Update</td>
-                        <td>: {{ Carbon\Carbon::parse(Auth::guard('employee')->user()->updated_at)
+                        <td>: {{ Carbon\Carbon::parse($data->updated_at)
                         ->format('l, d-m-Y H:i:s')}}</td>
                    
                     </tr>
