@@ -24,7 +24,8 @@ class AdminController extends Controller
         $users = DB::table('users')->get();
         $countUs = count($users);
 
-        $emp = DB::table('employees')->get();
+        $emp = DB::table('employees')
+        ->where('status','=','Active')->get();
         $countEmp = count($emp);
 
         $kons = DB::table('konsultasis')->get();
@@ -249,6 +250,7 @@ class AdminController extends Controller
 
         $password = bcrypt($otp);
         Employee::create([
+<<<<<<< Updated upstream
             'name' => $request->nama,
             'nip' => $request->nip,
             'email' => $request->email,
@@ -258,5 +260,14 @@ class AdminController extends Controller
         ]);
 
         return redirect('/admin/users')->with('success', 'Akun berhasil dibuat password sementara adalah ' . $otp);
+=======
+                    'name' => $request->nama,
+                    'nip' => $request->nip,
+                    'email' => $request->email,
+                    'password' => $password,
+        ]);
+
+        return redirect('/admin/users')->with('success','Akun berhasil dibuat password sementara adalah '. $otp);
+>>>>>>> Stashed changes
     }
 }

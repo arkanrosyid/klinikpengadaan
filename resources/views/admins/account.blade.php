@@ -19,6 +19,7 @@
                         <td style="min-width: 300px">: {{ Auth::guard('admin')->user()->name}}</td>
                    
                     </tr>
+                  
                     <tr>
                         <td scope="row">E-mail</td>
                         <td>: {{ Auth::guard('admin')->user()->email}}</td>

@@ -25,7 +25,7 @@
                            </tr>
                            <tr>
                                <td scope="row">Pertanyaan</td>
-                               <td>  :  <div class="m-0 ml-3" >
+                               <td>  :  <div class="m-0 ml-3" style="border: solid 	#0275d8 1px;">
                                         <div class="m-2">
                                             {!!$pertanyaan!!}    
                                         </div>
@@ -71,8 +71,8 @@
                             </tr>
                             <tr>
                                 <td scope="row">Pertanyaan</td>
-                                <td>  :  <div class="m-0 ml-3" >
-                                         <div class="m-2">
+                                <td>  :  <div class="m-0 ml-3" style="border: solid 	#0275d8 1px;">
+                                         <div class="m-2" >
                                              {!!$pertanyaan!!}    
                                          </div>
                                      

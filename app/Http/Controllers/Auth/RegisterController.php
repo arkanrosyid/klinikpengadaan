@@ -91,17 +91,17 @@ class RegisterController extends Controller
      *
      * @return mixed
      */
-    protected function create(Request $data)
+    protected function create(Request $request)
     {
-        $this->validator($data->all())->validate();
-        // dd($data);
+        $this->validator($request->all())->validate();
+        // dd($request);
         User::create([
-            'name' => $data['name'],
-            'nip' => $data['nip'],
-            'email' => $data['email'],
-            'id_unit' => $data['unit'],
-            'phone' => $data['phone'],
-            'password' => bcrypt($data['password']),
+            'name' => $request->name,
+            'nip' => $request->nip,
+            'email' => $request->email,
+            'id_unit' => $request->unit,
+            'phone' => $request->phone,
+            'password' => bcrypt($request->password),
         ]);
 
         return redirect(url('login'))->with(['info' => 'Akun sukses dibuat!, anda dapat login sekarang']);

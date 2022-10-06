@@ -313,13 +313,13 @@
                                                                
                                                                 <?php 
                                                            
-                                                                $user = User::find($id);  ?>
+                                                                $user = User::find($id);?>
                                                                 <small>Pengguna :</small> <strong> {{$username = $user['name']}}  </strong>
                                                                 @else
 
                                                                 <?php 
                                                            
-                                                                $user = Employee::find($id);  ?>
+                                                                $user = Employee::find($id);?>
                                                                 <small>Pegawai :</small> <strong>  {{$username = $user['name']}} </strong>
                                                                 @endif
 

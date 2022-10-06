@@ -6,7 +6,11 @@
   tinymce.init({
     selector: '#jawab'
   });
+
+  
 </script>
+
+
 
 <div class="container-fluid">
     <div class="card shadow mb-4">
@@ -15,7 +19,7 @@
         </div>
         <div class="card-body">
             
-               <table class="table">
+               <table class="table" >
                    <thead>
                        <tr>
                            <th>No</th>
@@ -231,5 +235,5 @@
     </div>
 
 </div>
-    
+
 @endsection

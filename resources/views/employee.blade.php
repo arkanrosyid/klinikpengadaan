@@ -17,24 +17,23 @@
 
     <title>KLINIK PENGADAAN - Pegawai</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-
-    <!-- Custom styles for this template-->
-    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" 
-    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+     <!-- Custom fonts for this template-->
+     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+     <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet">
+ 
+     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+ 
+     <!-- Custom styles for this template-->
+     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+ 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+     
+     
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   
 </head>
 
 <body id="page-top">
@@ -239,27 +238,24 @@
 
 @endif
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}v"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
-    
-
-
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
-
+      <!-- Bootstrap core JavaScript-->
+      <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+      <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  
+      <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  
+      <!-- Core plugin JavaScript-->
+      <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  
+      <!-- Custom scripts for all pages-->
+      <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+      
+  
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 @yield('script')
 
 </body>

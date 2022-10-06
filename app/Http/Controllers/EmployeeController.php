@@ -38,6 +38,7 @@ class EmployeeController extends Controller
     {
         $emp = Auth::guard('employee')->user()->id;
         $aktif = DB::table('konsultasis')
+
             ->where('id_employee', '=', $emp)
             ->where('status', '=', 'Aktif')
             ->get();

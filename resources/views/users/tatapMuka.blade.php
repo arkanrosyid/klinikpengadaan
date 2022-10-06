@@ -1,6 +1,7 @@
 @extends('home')
 @section('user')
 
+
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -8,7 +9,7 @@
         </div>
         <div class="card-body">
             
-               <table class="table">
+               <table class="table" id="myTable">
                    <thead>
                        <tr>
                            <th>No</th>
