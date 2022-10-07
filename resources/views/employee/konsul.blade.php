@@ -174,11 +174,7 @@
                     </div>   
                     </div>
                     <div class="card-body">
-<<<<<<< Updated upstream
                         {!! $TM[0]->hasil!!}
-=======
-                        {!!$TM[0]->hasil!!}
->>>>>>> Stashed changes
                     </div>
                 </div>
                 @endif  
@@ -230,11 +226,7 @@
                                                             </td>
                                                             <td>
                                                                 <div align="right">
-<<<<<<< Updated upstream
                                                                     <small  class=" text-muted">{{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</small>
-=======
-                                                                    <small  class=" text-muted">{{Carbon\Carbon::parse($created)->format('l, d-m-Y h:i')}}</small>
->>>>>>> Stashed changes
                                                                 </div>
                                                             </td>
                                                         </tr>

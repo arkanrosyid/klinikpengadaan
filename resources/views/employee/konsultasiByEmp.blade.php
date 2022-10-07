@@ -44,13 +44,6 @@
             </div>
         </div>
 
-<<<<<<< Updated upstream
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Konsultasi Selesai</h6>
-            </div>
-            <div class="card-body">
-=======
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-success">Konsultasi Selesai</h6>
@@ -71,7 +64,7 @@
                     <tbody>
                         <tr>
                             <td scope="row" style="width : 100px">Waktu </td>
-                            <td> : {{Carbon\Carbon::parse($created)->format('l, d-m-Y h:i')}}</td>
+                            <td> : {{Carbon\Carbon::parse($created)->translatedFormat('l, d-m-Y h:i')}}</td>
                             
                         </tr>
                         <tr>
@@ -90,9 +83,8 @@
                 <hr>
 
              @endforeach
->>>>>>> Stashed changes
            
-                @foreach ($selesai as $item)
+                {{-- @foreach ($selesai as $item)
                    <?php
                    $id      = $item->id;
                     $tema  = $item->tema;
@@ -125,7 +117,7 @@
                         </tbody>
                     </table>
                      <hr>
-                 @endforeach
+                 @endforeach --}}
                
             </div>
         </div>

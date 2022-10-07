@@ -66,7 +66,7 @@ class LoginController extends Controller
         return back()->withInput($request->only('email', 'remember'));
     }
 
-     public function showEmployeeLoginForm()
+    public function showEmployeeLoginForm()
     {
         return view('employee.login');
     }
@@ -86,7 +86,7 @@ class LoginController extends Controller
     }
 
 
-     public function showUserLoginForm()
+    public function showUserLoginForm()
     {
         return view('User.auth.login');
     }

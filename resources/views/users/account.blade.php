@@ -37,43 +37,26 @@
                     </tr>
                     <tr>
                         <td scope="row">E-mail</td>
-<<<<<<< Updated upstream
                         <td>: {{ $Data->email}}</td>
                    
                     </tr>
                     <tr>
                         <td scope="row">No Telpon</td>
                         <td>: {{ $Data->phone}}</td>
-=======
-                        <td>: {{ $user->email}}</td>
->>>>>>> Stashed changes
                    
                     </tr>
-                    <tr>
-                        <td>No Telp</td>
-                        <td>: {{$user->phone}}</td>
-                    </tr>
+                
                     <tr>
                         <td scope="row">Tanggal Buat</td>
-<<<<<<< Updated upstream
                         <td>: {{ Carbon\Carbon::parse($Data->created_at)
                         ->translatedFormat('l, d-m-Y H:i:s')}}</td>
-=======
-                        <td>: {{ Carbon\Carbon::parse($user->created_at)
-                        ->format('l, d-m-Y H:i:s')}}</td>
->>>>>>> Stashed changes
                    
                     </tr>
 
                     <tr>
                         <td scope="row">Terakhir Update</td>
-<<<<<<< Updated upstream
                         <td>: {{ Carbon\Carbon::parse($Data->updated_at)
                         ->translatedFormat('l, d-m-Y H:i:s')}}</td>
-=======
-                        <td>: {{ Carbon\Carbon::parse($user->updated_at)
-                        ->format('l, d-m-Y H:i:s')}}</td>
->>>>>>> Stashed changes
                    
                     </tr>
                 </tbody>

@@ -35,16 +35,19 @@ class EmployeeForgotPasswordController extends Controller
         $this->middleware('guest:employee');
     }
 
-    public function showLinkRequestForm() {
+    public function showLinkRequestForm()
+    {
         return view('employee.passwords.email');
     }
 
     //defining which password broker to use, in our case its the admins
-    protected function broker() {
+    protected function broker()
+    {
         return Password::broker('employees');
     }
 
-    public function sendResetLinkEmployee(Request $request){
+    public function sendResetLinkEmployee(Request $request)
+    {
 
         $request->validate([
             'email' => 'required|email|exists:employees,email',
@@ -54,21 +57,20 @@ class EmployeeForgotPasswordController extends Controller
 
         DB::table('password_resets')->insert([
             'email' => $request->email,
-            'token' => $token ,
+            'token' => $token,
             'created_at' => Carbon::now(),
         ]);
 
-        $action_link = route('employee.password.reset',['token' => $token, 'email' => $request ->email]);
-        $body = "Kita menerima request reset password untuk <b> Sikoperaja </b> dengan akun ". $request->email.
-        ". Anda dapat melakukan reset password melalui tombol dibawah ini.";
+        $action_link = route('employee.password.reset', ['token' => $token, 'email' => $request->email]);
+        $body = "Kita menerima request reset password untuk <b> Klinik Pengadaan </b> dengan akun " . $request->email .
+            ". Anda dapat melakukan reset password melalui tombol dibawah ini.";
 
-        Mail::send('sendmail', ['action_link'=>$action_link, 'body' =>$body], function($message) use ($request){
-            $message->from('sikoperaja@gmail.com','Sikoperaja');
-            $message->to($request->email,'Employee')
-            -> subject('Reset Password');
+        Mail::send('sendmail', ['action_link' => $action_link, 'body' => $body], function ($message) use ($request) {
+            $message->from('sikoperaja@gmail.com', 'Klinik Pengadaan');
+            $message->to($request->email, 'Employee')
+                ->subject('Reset Password');
         });
 
-        return back()->with('success','Kami sudah mengirimkan link reset password ke e-mail');
-
+        return back()->with('success', 'Kami sudah mengirimkan link reset password ke e-mail');
     }
 }
